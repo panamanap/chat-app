@@ -3,9 +3,10 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { DialogsItem } from './DialogsItem';
 
 export const Dialogs = () => {
-    const dialogs = useTypedSelector(state => state.sidebar)
+    const dialogs = useTypedSelector((state) => state.sidebar);
+    
     return (
-        <div>
+        <div className="dialogs">
             {dialogs.map((user) => (
                 <DialogsItem
                     key={user.id}

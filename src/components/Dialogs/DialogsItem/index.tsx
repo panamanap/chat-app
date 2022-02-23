@@ -4,7 +4,7 @@ import './DialogsItem.scss'
 
 export const DialogsItem: React.FC<IDialogsItem> = ({avatar, name, title}) => {
   return (
-    <div className='user'>
+    <div className='dialog'>
         {/* <img src="/" alt={avatar} /> */}
         <div className='img'></div>
         <div className='description'>

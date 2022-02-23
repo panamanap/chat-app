@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { searchDialog } from '../../store/actions/sidebar';
 import { Dialogs } from '../Dialogs';
+import { Navbar } from '../Navbar';
 import { Input } from '../UI/Input/Input';
 import './Sidebar.scss';
 
@@ -14,10 +15,11 @@ export const Sidebar = () => {
 
     return (
         <div className="sidebar">
-            <div className='search'>
+            <header className='search'>
                 <Input onChange={onSearchDialog} placeholder='Search'/>
-            </div>
+            </header>
             <Dialogs />
+            <Navbar />
         </div>
     );
 };

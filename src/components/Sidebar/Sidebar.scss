@@ -1,13 +1,30 @@
-@import '../../sass/constatnts';
+@import '../../sass/constants';
 
 .sidebar {
     background-color: $sidebar-color;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex-basis: 400px;
     border-right: 1px solid #333;
+    box-shadow: 1px 0 3px #777;
 
-    .search {
+    .search{
         padding: 10px;
+    }
+
+    .dialogs {
+        flex-grow: 1;
+    }
+
+    .navbar{
+        padding: 10px 50px;
+        box-shadow: 0 -1px 3px #777;
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            cursor: pointer;
+        }
     }
 }
