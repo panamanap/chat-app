@@ -1,13 +1,8 @@
 import React from 'react'
+import { IDialogsItem } from '../../../types/sidebar'
 import './DialogsItem.scss'
 
-interface DialogsItemProps {
-    avatar: string;
-    name: string;
-    title: string;
-}
-
-export const DialogsItem: React.FC<DialogsItemProps> = ({avatar, name, title}) => {
+export const DialogsItem: React.FC<IDialogsItem> = ({avatar, name, title}) => {
   return (
     <div className='user'>
         {/* <img src="/" alt={avatar} /> */}
