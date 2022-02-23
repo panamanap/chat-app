@@ -1,10 +1,12 @@
-import React from 'react'
-import { Sidebar } from '../components/Sidebar'
+import React from 'react';
+import { Content } from '../components/Content';
+import { Sidebar } from '../components/Sidebar';
 
 export const Home = () => {
-  return (
-    <div>
-        <Sidebar/>
-    </div>
-  )
-}
+    return (
+        <div className='home'>
+            <Sidebar />
+            <Content/>
+        </div>
+    );
+};

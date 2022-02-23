@@ -1,0 +1,26 @@
+@import './constatnts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.8rem;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .home {
+        height: 100%;
+        display: flex;
+    }
+}

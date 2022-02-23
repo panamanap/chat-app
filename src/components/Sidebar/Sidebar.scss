@@ -1,0 +1,13 @@
+@import '../../sass/constatnts';
+
+.sidebar {
+    background-color: $sidebar-color;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 400px;
+    border-right: 1px solid #333;
+
+    .search {
+        padding: 10px;
+    }
+}

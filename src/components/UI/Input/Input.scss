@@ -1,0 +1,16 @@
+@import '../../../sass/constatnts' ;
+
+input {
+    padding: 10px 15px;
+    border: none;
+    background-color: $sidebar-elements-color;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+input:focus {
+    border: none;
+    outline: 2px solid #4aade6;
+    background-color: #fff;
+}
