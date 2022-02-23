@@ -1,0 +1,63 @@
+@mixin buttons {
+    background: none;
+            border: none;
+            cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #5a7092;
+
+    &__left {
+        display: flex;
+        align-items: center;
+
+        &-avatar {
+            display: block;
+            height: 45px;
+            width: 45px;
+            background-color: teal;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        &-personData {
+            margin-right: 15px;
+            &-name {
+                padding-bottom: 5px;
+                font-size: 25px;
+            }
+            &-status {
+                color: #c2bfb4;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        &-call {
+            padding: 15px;
+            @include buttons();
+        }
+        
+        &-search {
+            margin-right: 15px;
+            @include buttons();
+            img{
+                height: 25px;
+                width: 25px;
+            }
+        }
+        &-more {
+            @include buttons();
+            img{
+                height: 15px;
+                width: 15px;
+            }
+            
+        }
+    }
+}
