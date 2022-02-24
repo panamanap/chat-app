@@ -1,15 +1,14 @@
 import React from 'react';
-import { Navbar } from './Navbar/Navbar';
-import './Content.scss'
+import { Header } from './Header';
+import './DialogContent.scss'
 import { FormMessage } from './FormMessage/FormMessage';
 
-const Content = () => {
+export const DialogContent = () => {
     return (
         <div className='content'>
-            <Navbar />
+            <Header />
             <FormMessage/>
         </div>
     );
 };
 
-export default Content;

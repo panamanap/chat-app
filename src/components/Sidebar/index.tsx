@@ -1,4 +1,5 @@
-import React from 'react';
+import { Resizable } from 're-resizable';
+import React, { ReactNode } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchDialog } from '../../store/actions/sidebar';
 import { Dialogs } from '../Dialogs';
@@ -10,16 +11,27 @@ export const Sidebar = () => {
     const dispatch = useDispatch();
 
     const onSearchDialog = (text: string) => {
-        dispatch(searchDialog(text))
-    }
+        dispatch(searchDialog(text));
+    };
 
     return (
-        <div className="sidebar">
-            <header className='search'>
-                <Input onChange={onSearchDialog} placeholder='Search'/>
+        <Resizable
+            className="sidebar"
+            defaultSize={{
+                width: 400,
+                height: '100%',
+            }}
+            enable={{
+                right: true
+            }}
+            maxWidth='50%'
+            minWidth={250}
+        >
+            <header className="search">
+                <Input onChange={onSearchDialog} placeholder="Search" />
             </header>
             <Dialogs />
             <Navbar />
-        </div>
+        </Resizable>
     );
 };

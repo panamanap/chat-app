@@ -1,3 +1,5 @@
+@import '../../../sass/constants';
+
 @mixin gabarites {
     height: 25px;
     width: 25px;
@@ -14,19 +16,24 @@
 }
 
 .formMessage {
-    background-color: #5a7092;
+    background-color: $dialog-backgroung-color;
+
     &__form {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 17px;
+        padding: 11px 30px;
+
         &-div{
             @include flex();
+
             &-input {
                 color: #000;
+
                 input {
                     background: none;
                     color: #000;
+
                     &:focus {
                         background: none;
                         border: none;
@@ -36,8 +43,10 @@
     
             &-clip {
                 margin-right: 14px;
+
                 button {
                     @include button();
+
                     img {
                     @include gabarites()  
                     }
@@ -48,13 +57,15 @@
 
        &-div{
             @include flex();
+            
             &-smile {
-                    @include gabarites();
-                    @include button();
-                    margin-right: 14px;
+                @include gabarites();
+                @include button();
+                margin-right: 14px;
             }
 
             &-plane{
+
                 button {
                     @include button()
                 }
