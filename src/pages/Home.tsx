@@ -1,12 +1,12 @@
 import React from 'react';
-import Content from '../components/Content/Content';
+import { DialogContent } from '../components/DialogContent';
 import { Sidebar } from '../components/Sidebar';
 
 export const Home = () => {
     return (
         <div className='home'>
             <Sidebar />
-            <Content/>
+            <DialogContent/>
         </div>
     );
 };
