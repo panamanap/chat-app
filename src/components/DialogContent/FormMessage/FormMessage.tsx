@@ -1,31 +1,43 @@
-import React from 'react'
-import './FormMessage.scss'
+import React from 'react';
+import { ImageButton } from '../../UI/ImageButton/ImageButton';
+import { Input } from '../../UI/Input/Input';
+import './FormMessage.scss';
 
 export const FormMessage = () => {
-  return (
-    <div className='formMessage'>
-      <form action="" className='formMessage__form'>
-        <div className='formMessage__form-div'>
-          <div className='formMessage__form-div-clip'>
-            <button>
-              <img src="/assets/clip.svg" alt="clip" />
-            </button>
-          </div>
-          <div className='formMessage__form-div-input'>
-            <input type="text" placeholder='Write a message...' />
-          </div>
+    const onChange = () => {};
+    const onClick = () => {};
+
+    return (
+        <div className="formMessage">
+            <form action="" className="formMessage__form">
+                <div className="formMessage__form-div">
+                    <ImageButton
+                        path="/assets/clip.svg"
+                        alt="clip"
+                        size={30}
+                        onClick={onClick}
+                    />
+                    <Input
+                        placeholder="Write a message..."
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="formMessage__form-sending">
+                    <ImageButton
+                        path="/assets/smile.svg"
+                        alt="smile"
+                        size={30}
+                        onClick={onClick}
+                    />
+
+                    <ImageButton
+                        path="/assets/plane.svg"
+                        alt="send"
+                        size={35}
+                        onClick={onClick}
+                    />
+                </div>
+            </form>
         </div>
-        <div className="formMessage__form-div">
-          <div className='formMessage__form-div-smile'>
-            <img src="/assets/smile.svg" alt="" />
-          </div>
-          <div className='formMessage__form-div-plane'>
-            <button>
-              <img src="/assets/plane.svg" alt="" />
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  )
-}
+    );
+};

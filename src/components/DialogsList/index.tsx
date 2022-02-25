@@ -1,13 +1,14 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { selectFilterDialogs } from '../../store/selectors/sidebar';
 import { DialogsItem } from './DialogsItem';
 
-export const Dialogs = () => {
-    const dialogs = useTypedSelector((state) => state.sidebar);
+export const DialogsList = () => {
+    const dialogsList = useTypedSelector(selectFilterDialogs);
     
     return (
-        <div className="dialogs">
-            {dialogs.map((user) => (
+        <div className="dialogsList">
+            {dialogsList.map((user) => (
                 <DialogsItem
                     key={user.id}
                     avatar={user.avatar}

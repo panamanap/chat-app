@@ -1,36 +1,44 @@
-import { Resizable } from 're-resizable';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Resizable, ResizeCallback } from 're-resizable';
 import { searchDialog } from '../../store/actions/sidebar';
-import { Dialogs } from '../Dialogs';
+import { DialogsList } from '../DialogsList';
 import { Navbar } from '../Navbar';
 import { Input } from '../UI/Input/Input';
 import './Sidebar.scss';
 
 export const Sidebar = () => {
     const dispatch = useDispatch();
+    const [width, setWidth] = React.useState(
+        localStorage.getItem('sizeSidebar') || 400
+    );
 
     const onSearchDialog = (text: string) => {
         dispatch(searchDialog(text));
+    };
+
+    const onResizeStop: ResizeCallback = (event, direction, ref, params) => {
+        localStorage.setItem('sizeSidebar', `${+width + params.width}`);
     };
 
     return (
         <Resizable
             className="sidebar"
             defaultSize={{
-                width: 400,
+                width: width,
                 height: '100%',
             }}
             enable={{
-                right: true
+                right: true,
             }}
-            maxWidth='50%'
+            maxWidth="50%"
             minWidth={250}
+            onResizeStop={onResizeStop}
         >
             <header className="search">
                 <Input onChange={onSearchDialog} placeholder="Search" />
             </header>
-            <Dialogs />
+            <DialogsList />
             <Navbar />
         </Resizable>
     );

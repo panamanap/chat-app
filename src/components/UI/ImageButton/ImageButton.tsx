@@ -1,5 +1,5 @@
 import React from 'react';
-import './ImageButton.scss'
+import './ImageButton.scss';
 
 interface ImageButtonProps {
     path: string;
@@ -13,7 +13,20 @@ export const ImageButton: React.FC<ImageButtonProps> = ({
     alt,
     size,
     onClick,
-    
 }) => {
-    return <img width={size} height={size} src={path} alt={alt} onClick={onClick} />;
+    return (
+        <button
+            className={alt}
+            style={{ width: `${size}px`, height: `${size}px` }}
+        >
+            <img
+                className={alt}
+                width={size}
+                height={size}
+                src={path}
+                alt={alt}
+                onClick={onClick}
+            />
+        </button>
+    );
 };

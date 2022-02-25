@@ -16,60 +16,30 @@
 }
 
 .formMessage {
-    background-color: $dialog-backgroung-color;
+    background-color: $dialog-elements-color;
 
     &__form {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 11px 30px;
+        padding: 8.5px 25px;
 
         &-div{
             @include flex();
-
-            &-input {
-                color: #000;
-
-                input {
-                    background: none;
-                    color: #000;
-
-                    &:focus {
-                        background: none;
-                        border: none;
-                    }
-                }
+            flex-grow: 1;
+            
+            button {
+                margin-right: 20px;
             }
-    
-            &-clip {
-                margin-right: 14px;
+        }
 
-                button {
-                    @include button();
-
-                    img {
-                    @include gabarites()  
-                    }
-                }
-                
-            }
+        &-sending{
+            @include flex();
+            margin-left: 20px; 
         }
 
        &-div{
             @include flex();
-            
-            &-smile {
-                @include gabarites();
-                @include button();
-                margin-right: 14px;
-            }
-
-            &-plane{
-
-                button {
-                    @include button()
-                }
-            }   
        }
     }
 }

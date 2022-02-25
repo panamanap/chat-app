@@ -1,4 +1,5 @@
 export interface IDialogsItem {
+    id: number;
     avatar: string;
     name: string;
     title: string;
@@ -9,8 +10,8 @@ export enum SidebarActionType {
 }
 
 export interface SearchDialog {
-    type: SidebarActionType.SEARCH_DIALOG,
-    payload: string,
+    type: SidebarActionType.SEARCH_DIALOG;
+    payload: string;
 }
 
-export type SidebarAction = SearchDialog
+export type SidebarAction = SearchDialog;

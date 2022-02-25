@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageButton } from '../UI/ImageButton/ImageButton';
 
-const imageSize = 40;
+const imageSize = 35;
 
 export const Navbar = () => {
     const onClickButton = () => {
@@ -12,12 +12,12 @@ export const Navbar = () => {
         <footer className="navbar">
             <ImageButton
                 path="/assets/user.svg"
-                alt="menu"
+                alt="user"
                 onClick={onClickButton}
                 size={imageSize}
             />
             <ImageButton
-                path="/assets/user.svg"
+                path="/assets/call.svg"
                 alt="calls"
                 onClick={onClickButton}
                 size={imageSize}
@@ -29,8 +29,8 @@ export const Navbar = () => {
                 size={imageSize}
             />
             <ImageButton
-                path="/assets/user.svg"
-                alt="user"
+                path="/assets/settings.svg"
+                alt="settings"
                 onClick={onClickButton}
                 size={imageSize}
             />
