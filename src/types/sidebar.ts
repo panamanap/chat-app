@@ -1,10 +1,3 @@
-export interface IDialogsItem {
-    id: number;
-    avatar: string;
-    name: string;
-    title: string;
-}
-
 export enum SidebarActionType {
     SEARCH_DIALOG = 'SEARCH_DIALOG',
 }

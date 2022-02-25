@@ -1,14 +1,8 @@
 import React from 'react';
+import { ImageButtonType } from '../../../types/UI';
 import './ImageButton.scss';
 
-interface ImageButtonProps {
-    path: string;
-    alt: string;
-    size: number;
-    onClick: () => void;
-}
-
-export const ImageButton: React.FC<ImageButtonProps> = ({
+export const ImageButton: React.FC<ImageButtonType> = ({
     path,
     alt,
     size,

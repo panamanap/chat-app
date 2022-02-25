@@ -1,0 +1,44 @@
+.profileInfo {
+    display: flex;
+    align-items: center;
+    user-select: none;   
+    cursor: pointer;
+
+    .img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    h3 {
+        margin-bottom: 5px;
+    }
+}
+
+.profileInfo-dialog:hover {
+    background-color: #eeecec;
+}
+
+.profileInfo-modal {
+    cursor: auto;
+    user-select: auto;
+
+    .img {
+        width: 70px;
+        height: 70px; 
+        margin-right: 25px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+.profileInfo-dialog{
+    padding: 10px;
+}

@@ -1,14 +1,21 @@
 export interface DialogState {
-    openAdditionalMenu: boolean,
+    openDialogMenu: boolean;
+    openProfileModal: boolean;
 }
 
 export enum DialogActionType {
-    OPEN_ADDITIONAL_MENU = 'OPEN_ADDITIONAL_MENU',
+    OPEN_DIALOG_MENU = 'OPEN_DIALOG_MENU',
+    OPEN_PROFILE_MODAL = 'OPEN_PROFILE_MODAL',
 }
 
-export interface OpenAdditionalMenu {
-    type: DialogActionType.OPEN_ADDITIONAL_MENU;
+export interface OpenDialogMenu {
+    type: DialogActionType.OPEN_DIALOG_MENU;
     payload: boolean;
 }
 
-export type DialogAction = OpenAdditionalMenu;
+export interface OpenProfileModal {
+    type: DialogActionType.OPEN_PROFILE_MODAL;
+    payload: boolean;
+}
+
+export type DialogAction = OpenDialogMenu | OpenProfileModal;

@@ -1,12 +1,14 @@
 import React from 'react';
 import { DialogContent } from '../components/DialogContent';
+import { ProfileModal } from '../components/ProfileModal';
 import { Sidebar } from '../components/Sidebar';
 
 export const Home = () => {
     return (
-        <div className='home'>
+        <div className="home">
             <Sidebar />
-            <DialogContent/>
+            <DialogContent />
+            <ProfileModal />
         </div>
     );
 };

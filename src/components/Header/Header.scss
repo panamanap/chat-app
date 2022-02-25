@@ -1,0 +1,28 @@
+@import '../../sass/constants';
+
+@mixin buttons {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $dialog-elements-color;
+    position: relative;
+
+    .navPanel {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-dialog {
+    padding: 10px 30px;
+}
+
+.header-modal {
+    user-select: none;
+    margin-bottom: 30px; 
+}

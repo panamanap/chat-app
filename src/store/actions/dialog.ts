@@ -1,6 +1,11 @@
 import { DialogActionType } from './../../types/dialog';
 
-export const openAdditionalMenu = (payload: boolean) => ({
-    type: DialogActionType.OPEN_ADDITIONAL_MENU,
+export const openDialogMenu = (payload: boolean) => ({
+    type: DialogActionType.OPEN_DIALOG_MENU,
     payload
 })
+
+export const openProfileModal = (payload: boolean) => ({
+    type: DialogActionType.OPEN_PROFILE_MODAL,
+    payload,
+}) 

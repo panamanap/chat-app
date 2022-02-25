@@ -1,9 +1,10 @@
-import { SidebarAction, SidebarActionType, IDialogsItem } from './../../types/sidebar';
+import { IProfileInfo } from './../../types/profile';
+import { SidebarAction, SidebarActionType } from './../../types/sidebar';
 
-const initialState: IDialogsItem[] = [
-    { id: 1, avatar: 'avatar', name: 'Иванов Иван', title: 'Привет' },
-    { id: 2, avatar: 'avatar', name: 'Петров Петя', title: 'Привет' },
-    { id: 3, avatar: 'avatar', name: 'Андреев Андрей', title: 'Привет' },
+const initialState: IProfileInfo[] = [
+    { id: 1, avatar: '', name: 'Иванов Иван', title: 'Привет' },
+    { id: 2, avatar: '', name: 'Петров Петя', title: 'Привет' },
+    { id: 3, avatar: '', name: 'Андреев Андрей', title: 'Привет' },
 ];
 
 export const sidebar = (state = initialState, action: SidebarAction) => {

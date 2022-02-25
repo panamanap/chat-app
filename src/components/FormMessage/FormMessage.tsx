@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImageButton } from '../../UI/ImageButton/ImageButton';
-import { Input } from '../../UI/Input/Input';
+import { ImageButton } from '../UI/ImageButton/ImageButton';
+import { Input } from '../UI/Input/Input';
 import './FormMessage.scss';
 
 export const FormMessage = () => {
@@ -14,7 +14,7 @@ export const FormMessage = () => {
                     <ImageButton
                         path="/assets/clip.svg"
                         alt="clip"
-                        size={30}
+                        size={25}
                         onClick={onClick}
                     />
                     <Input
