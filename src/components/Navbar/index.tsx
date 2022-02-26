@@ -1,39 +1,26 @@
 import React from 'react';
+import { ImageButtonType } from '../../types/UI';
 import { ImageButton } from '../UI/ImageButton/ImageButton';
+import './Navbar.scss';
 
-const imageSize = 35;
+interface NavbarProps {
+    buttons: ImageButtonType[];
+    children?: React.ReactNode;
+}
 
-export const Navbar = () => {
-    const onClickButton = () => {
-        console.log('aaa');
-    };
-
+export const Navbar: React.FC<NavbarProps> = ({ buttons, children }) => {
     return (
-        <footer className="navbar">
-            <ImageButton
-                path="/assets/user.svg"
-                alt="user"
-                onClick={onClickButton}
-                size={imageSize}
-            />
-            <ImageButton
-                path="/assets/call.svg"
-                alt="calls"
-                onClick={onClickButton}
-                size={imageSize}
-            />
-            <ImageButton
-                path="/assets/dialogs.svg"
-                alt="dialogs"
-                onClick={onClickButton}
-                size={imageSize}
-            />
-            <ImageButton
-                path="/assets/settings.svg"
-                alt="settings"
-                onClick={onClickButton}
-                size={imageSize}
-            />
-        </footer>
+        <nav className="navbar">
+            {buttons.map(({ alt, path, onClick, size }) => (
+                <ImageButton
+                    key={alt}
+                    path={path}
+                    alt={alt}
+                    onClick={onClick}
+                    size={size}
+                />
+            ))}
+            {children}
+        </nav>
     );
 };

@@ -14,7 +14,7 @@ export const ImageButton: React.FC<ImageButtonType> = ({
             style={{ width: `${size}px`, height: `${size}px` }}
         >
             <img
-                className={alt}
+                className={`image ${alt}`}
                 width={size}
                 height={size}
                 src={path}

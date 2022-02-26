@@ -1,0 +1,39 @@
+.drawer-wrapper {
+    position: absolute;
+    z-index: 1;
+    width: 130vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+   
+    .drawer {
+        height: 100%;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+}
+
+.transitionDrawer-enter {
+    opacity: 0;
+    transform: translateX(-400px);
+}
+
+.transitionDrawer-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.transitionDrawer-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.transitionDrawer-exit-active {
+    opacity: 0;
+    transition: opacity 500ms, transform 500ms;
+    transform: translateX(-400px);
+}
+

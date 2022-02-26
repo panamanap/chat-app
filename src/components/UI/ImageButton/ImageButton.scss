@@ -7,11 +7,9 @@
     user-select: none;
     box-sizing: content-box;
     
-    
-    img {
+    .image {
         cursor: pointer;
-        opacity: 0.5;
-        
+        opacity: 0.5; 
     }
 
     &-more {
@@ -23,7 +21,7 @@
     margin-left: 20px;
 }
 
-img:hover {
+.image:hover {
     opacity: 0.7; 
 }
 
@@ -33,3 +31,6 @@ img:hover {
     background-color: $elements-background-color;
 }
 
+.imageButton-burger {
+    margin-right: 10px;
+}

@@ -1,0 +1,26 @@
+.colorWrapper {
+    padding: 5px 10px;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .suggested-colors {
+        display: flex;
+        flex-flow: row wrap;
+        
+        span {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            outline: 1px solid #333;
+        }
+
+    }
+}   
+
+span:active {
+    transform: scale(0.9);
+}

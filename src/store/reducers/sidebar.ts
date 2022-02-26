@@ -1,5 +1,5 @@
-import { IProfileInfo } from './../../types/profile';
-import { SidebarAction, SidebarActionType } from './../../types/sidebar';
+import { IProfileInfo } from '../../types/profile';
+import { SidebarAction, SidebarActionType } from '../../types/sidebar';
 
 const initialState: IProfileInfo[] = [
     { id: 1, avatar: '', name: 'Иванов Иван', title: 'Привет' },
