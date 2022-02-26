@@ -19,9 +19,8 @@ import { ProfileInfo } from '../ProfileInfo';
 import { AdditionalMenu } from '../AdditionalMenu';
 import { openProfileMenu } from '../../store/actions/profile';
 import { selectOpenProfileMenu } from '../../store/selectors/profile';
-import { Input } from '../UI/Input/Input';
-import { Button } from '../UI/Button';
 import { BACKGROUND_COLOR } from '../../utils/constants';
+import { ColorMenu } from '../ColorMenu';
 
 export const DialogContent = () => {
     const dispatch = useDispatch();
@@ -74,7 +73,7 @@ export const DialogContent = () => {
 
     const onResetColor = () => {
         dispatch(getColor('#C6D8FF'));
-        dispatch(openDialogMenu(false));    
+        dispatch(openDialogMenu(false));
     };
 
     const onClickButton = () => {};
@@ -121,17 +120,12 @@ export const DialogContent = () => {
             >
                 <AdditionalMenu top={60} right={40} condition={showDialogMenu}>
                     {showColorMenu ? (
-                        <span className="colorWrapper">
-                            <h4>Selected color: </h4>
-                            <Input
-                                onChange={onGetColor}
-                                type="color"
-                                defaultColor={
-                                    backgroundColor || dialogBackground
-                                }
-                            />
-                            <Button onClick={onResetColor}>Reset</Button>
-                        </span>
+                        <ColorMenu
+                            onGetColor={onGetColor}
+                            backgroundColor={backgroundColor}
+                            dialogBackground={dialogBackground}
+                            onResetColor={onResetColor}
+                        />
                     ) : (
                         <>
                             <p onClick={openProfile}>Viev profile</p>
