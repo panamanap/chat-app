@@ -1,0 +1,11 @@
+@import '../../../sass/constants';
+
+.customButton {
+    padding: 5px;
+    background-color: $elements-background-color;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #333;
+}

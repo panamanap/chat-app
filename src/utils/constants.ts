@@ -1,0 +1,2 @@
+export const BACKGROUND_COLOR = 'BACKGROUND_COLOR';
+export const SIDEBAR_SIZE = 'SIDEBAR_SIZE'

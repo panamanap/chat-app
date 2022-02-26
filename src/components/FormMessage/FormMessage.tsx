@@ -1,27 +1,24 @@
 import React from 'react';
 import { ImageButton } from '../UI/ImageButton/ImageButton';
 import { Input } from '../UI/Input/Input';
+import { Label } from '../UI/Label';
 import './FormMessage.scss';
 
 export const FormMessage = () => {
     const onChange = () => {};
-    const onClick = () => {};
+    const onClick = () => {
+        console.log('aaa');
+    };
 
     return (
         <div className="formMessage">
+            <Label onChange={onChange} path="/assets/clip.svg" alt="clip" size={25}/>
             <form action="" className="formMessage__form">
-                <div className="formMessage__form-div">
-                    <ImageButton
-                        path="/assets/clip.svg"
-                        alt="clip"
-                        size={25}
-                        onClick={onClick}
-                    />
-                    <Input
-                        placeholder="Write a message..."
-                        onChange={onChange}
-                    />
-                </div>
+                <Input
+                    type="text"
+                    placeholder="Write a message..."
+                    onChange={onChange}
+                />
                 <div className="formMessage__form-sending">
                     <ImageButton
                         path="/assets/smile.svg"
@@ -29,7 +26,6 @@ export const FormMessage = () => {
                         size={30}
                         onClick={onClick}
                     />
-
                     <ImageButton
                         path="/assets/plane.svg"
                         alt="send"

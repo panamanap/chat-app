@@ -2,11 +2,20 @@ import React from 'react';
 import './Input.scss';
 
 interface InputProps {
-    placeholder: string;
-    onChange: (text: string) => void;
+    placeholder?: string;
+    onChange: (value: string) => void;
+    type: string;
+    defaultColor?: string;
+    name?: string;
 }
 
-export const Input: React.FC<InputProps> = ({ placeholder, onChange }) => {
+export const Input: React.FC<InputProps> = ({
+    placeholder,
+    onChange,
+    type,
+    defaultColor,
+    name,
+}) => {
     const [value, setValue] = React.useState<string>('');
 
     React.useEffect(() => {
@@ -16,5 +25,14 @@ export const Input: React.FC<InputProps> = ({ placeholder, onChange }) => {
     const onChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
     };
-    return <input onChange={onChangeValue} placeholder={placeholder}></input>;
+    return (
+        <input
+            defaultValue={defaultColor}
+            className={type}
+            type={type}
+            onChange={onChangeValue}
+            placeholder={placeholder}
+            name={name}
+        ></input>
+    );
 };

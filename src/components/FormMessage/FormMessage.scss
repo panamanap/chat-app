@@ -17,29 +17,35 @@
 
 .formMessage {
     background-color: $dialog-elements-color;
+    display: flex;
+    align-items: center;
+    padding: 8.5px 10px;
+
+    .label-button {
+        margin-right: 10px;
+    }
+
+    &__file{
+        @include flex();
+
+        .clip {
+            margin-left: 10px;
+        }
+
+        
+    }
 
     &__form {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 8.5px 25px;
+        flex-grow: 1;
 
-        &-div{
-            @include flex();
-            flex-grow: 1;
-            
-            button {
-                margin-right: 20px;
-            }
-        }
 
         &-sending{
             @include flex();
             margin-left: 20px; 
+           
         }
-
-       &-div{
-            @include flex();
-       }
     }
 }

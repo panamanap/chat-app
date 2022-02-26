@@ -6,11 +6,12 @@ import { DialogsList } from '../DialogsList';
 import { Navbar } from '../Navbar';
 import { Input } from '../UI/Input/Input';
 import './Sidebar.scss';
+import { SIDEBAR_SIZE } from '../../utils/constants';
 
 export const Sidebar = () => {
     const dispatch = useDispatch();
     const [width, setWidth] = React.useState(
-        localStorage.getItem('sizeSidebar') || 400
+        localStorage.getItem(SIDEBAR_SIZE) || 400
     );
 
     const onSearchDialog = (text: string) => {
@@ -18,7 +19,7 @@ export const Sidebar = () => {
     };
 
     const onResizeStop: ResizeCallback = (event, direction, ref, params) => {
-        localStorage.setItem('sizeSidebar', `${+width + params.width}`);
+        localStorage.setItem(SIDEBAR_SIZE, `${+width + params.width}`);
     };
 
     return (
@@ -36,7 +37,11 @@ export const Sidebar = () => {
             onResizeStop={onResizeStop}
         >
             <header className="search">
-                <Input onChange={onSearchDialog} placeholder="Search" />
+                <Input
+                    type="text"
+                    onChange={onSearchDialog}
+                    placeholder="Search"
+                />
             </header>
             <DialogsList />
             <Navbar />

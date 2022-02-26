@@ -10,7 +10,7 @@ export const ImageButton: React.FC<ImageButtonType> = ({
 }) => {
     return (
         <button
-            className={alt}
+            className={`imageButton imageButton-${alt}`}
             style={{ width: `${size}px`, height: `${size}px` }}
         >
             <img

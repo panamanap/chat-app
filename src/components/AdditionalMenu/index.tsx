@@ -6,14 +6,14 @@ interface AdditionalMenuProps {
     top: number;
     right: number;
     condition: boolean;
-    onClick: () => void;
+    children: React.ReactNode;
 }
 
 export const AdditionalMenu: React.FC<AdditionalMenuProps> = ({
     top,
     right,
     condition,
-    onClick,
+    children,
 }) => {
     return (
         <CSSTransition
@@ -22,16 +22,13 @@ export const AdditionalMenu: React.FC<AdditionalMenuProps> = ({
             unmountOnExit
             classNames="transitionMenu"
         >
-            <ul
+            <div
                 className="menu"
                 onClick={(event) => event.stopPropagation()}
                 style={{ top: `${top}px`, right: `${right}px` }}
             >
-                <li onClick={onClick}>Viev profile</li>
-                <li>Change colors</li>
-                <li>Clear history</li>
-                <li>Delete chat </li>
-            </ul>
+                {children}
+            </div>
         </CSSTransition>
     );
 };

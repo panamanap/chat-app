@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { openDialogMenu, openProfileModal } from '../../store/actions/dialog';
+import { openProfileModal } from '../../store/actions/dialog';
 import { openProfileMenu } from '../../store/actions/profile';
-import { selectOpenModalProfile } from '../../store/selectors/dialogs';
+import { selectOpenProfileModal } from '../../store/selectors/dialogs';
 import { selectOpenProfileMenu } from '../../store/selectors/profile';
 import { AdditionalMenu } from '../AdditionalMenu';
 import { Header } from '../Header';
@@ -14,10 +14,8 @@ import './ProfileModal.scss';
 export const ProfileModal = () => {
     const dispatch = useDispatch();
 
-    const showProfile = useTypedSelector(selectOpenModalProfile);
+    const showProfile = useTypedSelector(selectOpenProfileModal);
     const showMenu = useTypedSelector(selectOpenProfileMenu);
-
-    console.log(showMenu);
 
     const onClick = () => {};
 
@@ -31,11 +29,6 @@ export const ProfileModal = () => {
             return;
         }
         dispatch(openProfileMenu(true));
-    };
-
-    const openProfile = () => {
-        dispatch(openProfileModal(true));
-        dispatch(openDialogMenu(false));
     };
 
     return (
@@ -76,10 +69,14 @@ export const ProfileModal = () => {
                     >
                         <AdditionalMenu
                             top={30}
-                            right={44}
+                            right={45}
                             condition={showMenu}
-                            onClick={openProfile}
-                        />
+                        >
+                            <li>Viev profile</li>
+                            <li>Change colors</li>
+                            <li>Clear history</li>
+                            <li>Delete chat </li>
+                        </AdditionalMenu>
                     </Header>
                     <ProfileInfo
                         name="Иванов Иван"

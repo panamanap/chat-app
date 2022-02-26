@@ -1,6 +1,6 @@
 @import '../../../sass/constants' ;
 
-input {
+.text {
     padding: 10px 15px;
     border: none;
     background-color: $elements-background-color;
@@ -9,8 +9,16 @@ input {
     font-size: 16px;
 }
 
-input:focus {
+.text:focus {
     border: none;
     outline: 2px solid #4aade6;
     background-color: #fff;
+}
+
+.color {
+    margin: 5px 0 5px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
 }
