@@ -1,8 +1,6 @@
 import React from 'react';
 import { ImageButtonType } from '../../types/UI';
-import { AdditionalMenu } from '../AdditionalMenu';
 import { Navbar } from '../Navbar';
-import { ImageButton } from '../UI/ImageButton/ImageButton';
 import './Header.scss';
 
 interface HeadersProps {
@@ -10,16 +8,22 @@ interface HeadersProps {
     buttons?: ImageButtonType[];
     type: string;
     children?: React.ReactNode;
+    style?: Style;
+}
+
+interface Style {
+    backgroundColor: string;
 }
 
 export const Header: React.FC<HeadersProps> = ({
     title,
-    buttons,
     type,
+    buttons,
     children,
+    style,
 }) => {
     return (
-        <header className={`header header-${type}`}>
+        <header className={`header header-${type}`} style={style}>
             {title}
             {buttons && <Navbar buttons={buttons}>{children}</Navbar>}
         </header>

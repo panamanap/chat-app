@@ -21,6 +21,7 @@ import { openProfileMenu } from '../../store/actions/profile';
 import { selectOpenProfileMenu } from '../../store/selectors/profile';
 import { BACKGROUND_COLOR } from '../../utils/constants';
 import { ColorMenu } from '../ColorMenu';
+import { MenuItem } from '../UI/MenuItem';
 
 export const DialogContent = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,7 @@ export const DialogContent = () => {
         }
     };
 
-    const openProfile = () => {
+    const onOpenProfile = () => {
         dispatch(openProfileModal(true));
         dispatch(openDialogMenu(false));
     };
@@ -93,7 +94,7 @@ export const DialogContent = () => {
                         title="last seen recently"
                         avatar=""
                         type="title"
-                        onClick={openProfile}
+                        onClick={onOpenProfile}
                     />
                 }
                 buttons={[
@@ -128,10 +129,28 @@ export const DialogContent = () => {
                         />
                     ) : (
                         <>
-                            <p onClick={openProfile}>Viev profile</p>
-                            <p onClick={onOpenColor}>Change colors</p>
-                            <p>Clear history</p>
-                            <p>Delete chat </p>
+                            <MenuItem
+                                title="Viev profile"
+                                path="/assets/user.svg"
+                                alt="user"
+                                onClick={onOpenProfile}
+                            />
+                            <MenuItem
+                                title="Change colors"
+                                path="/assets/brush.svg"
+                                alt="brush"
+                                onClick={onOpenColor}
+                            />
+                            <MenuItem
+                                title="Clear history"
+                                path="/assets/broom.svg"
+                                alt="broom"
+                            />
+                            <MenuItem
+                                title="Delete chat"
+                                path="/assets/trash.svg"
+                                alt="trash"
+                            />
                         </>
                     )}
                 </AdditionalMenu>

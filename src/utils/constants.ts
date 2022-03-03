@@ -1,2 +1,5 @@
 export const BACKGROUND_COLOR = 'BACKGROUND_COLOR';
-export const SIDEBAR_SIZE = 'SIDEBAR_SIZE'
+export const SIDEBAR_SIZE = 'SIDEBAR_SIZE';
+
+export const LOGIN_ROUTE = 'LOGIN_ROUTE';
+export const CHAT_ROUTE = 'CHAT_ROUTE';

@@ -13,14 +13,13 @@ interface ColorMenuProps {
 }
 
 const colors = [
-    '#FED6BC',
     '#FFFADD',
     '#DEF7FE',
     '#99CCCC',
+    '#B5F2EA',
     '#C3FBD8',
     '#FFCC99',
     '#CCFF99',
-    '#B5F2EA',
     '#6699CC',
 ];
 

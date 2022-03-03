@@ -1,11 +1,18 @@
 @import '../../../sass/constants';
 
 .customButton {
-    padding: 5px;
+    padding: 10px 20px;
+    font-size: 1.0rem;
     background-color: $elements-background-color;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid #ccc;
     user-select: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    border: 1px solid #333;
+}
+
+.customButton:hover {
+    background-color: #eeecec;
 }

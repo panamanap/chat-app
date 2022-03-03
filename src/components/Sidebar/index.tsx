@@ -32,7 +32,6 @@ export const Sidebar = () => {
     };
 
     const onOpenDrawer = () => {
-        console.log('aaaa');
         dispatch(openDrawer(true));
     };
 

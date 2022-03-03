@@ -3,21 +3,37 @@
     z-index: 1;
     width: 130vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
    
     .drawer {
         height: 100%;
-        width: 400px;
+        width: 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: #fff;
+
+        .navMenu{
+            padding: 15px 0;
+            flex-grow: 1;
+
+            .menu-item {
+                font-size: 1rem;
+                padding: 15px 25px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    opacity: 0.4;
+                }    
+            }
+        }
     }
 }
 
 .transitionDrawer-enter {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-300px);
 }
 
 .transitionDrawer-enter-active {
@@ -34,6 +50,6 @@
 .transitionDrawer-exit-active {
     opacity: 0;
     transition: opacity 500ms, transform 500ms;
-    transform: translateX(-400px);
+    transform: translateX(-300px);
 }
 
