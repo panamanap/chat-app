@@ -1,0 +1,23 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    img {
+        width: 20px;
+        height: 20px;
+        opacity: 0.6;
+        margin-right: 15px;
+    }   
+}
+
+.menu-item {
+    font-size: 1rem;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #eeecec;
+} 
+

@@ -1,3 +1,4 @@
+import { login } from './login';
 import { drawer } from './drawer';
 import { profile } from './profile';
 import { dialog } from './dialog';
@@ -8,7 +9,8 @@ export const rootReducer = combineReducers({
     sidebar,
     dialog,
     profile,
-    drawer
+    drawer,
+    login
 })
 
 export type RootState = ReturnType<typeof rootReducer>;

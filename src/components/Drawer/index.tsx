@@ -1,7 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { openDrawer } from '../../store/actions/drawer';
+import { selectGetColor } from '../../store/selectors/dialogs';
+import { BACKGROUND_COLOR } from '../../utils/constants';
+import { Footer } from '../Footer';
+import { Header } from '../Header';
+import { ProfileInfo } from '../ProfileInfo';
+import { MenuItem } from '../UI/MenuItem';
 import './Drawer.scss';
 
 interface DrawerProps {
@@ -13,6 +20,8 @@ const imageSize = 35;
 export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
     const dispatch = useDispatch();
 
+    const backgroundColor = useTypedSelector(selectGetColor);
+
     const onCloseDrawer = () => {
         dispatch(openDrawer(false));
     };
@@ -20,7 +29,7 @@ export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
     return (
         <CSSTransition
             in={condition}
-            timeout={1000}
+            timeout={500}
             unmountOnExit
             classNames="transitionDrawer"
         >
@@ -29,8 +38,52 @@ export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
                     className="drawer"
                     onClick={(event) => event.stopPropagation()}
                 >
-                    <div className="profile"></div>
-                    <div>Select a chat to start messaging</div>
+                    <Header
+                        title={
+                            <ProfileInfo
+                                avatar=""
+                                name="Иванов Иван"
+                                type="profile"
+                                title=""
+                            />
+                        }
+                        type="profile"
+                        style={{
+                            backgroundColor: `${
+                                localStorage.getItem(BACKGROUND_COLOR) ||
+                                backgroundColor
+                            }`,
+                        }}
+                    />
+                    <div className="navMenu">
+                        <MenuItem title="Contacts" path="/assets/contact.svg" alt="contacts" />
+                        <MenuItem
+                            title="Calls"
+                            path="/assets/call.svg"
+                            alt="call"
+                        />
+                        <MenuItem
+                            title="Games"
+                            path="/assets/games.svg"
+                            alt="contacts"
+                        />
+                        <MenuItem
+                            title="Music"
+                            path="/assets/music.svg"
+                            alt="music"
+                        />
+                        <MenuItem
+                            title="Settings"
+                            path="/assets/settings.svg"
+                            alt="settings"
+                        />
+                        <MenuItem
+                            title="Night mode"
+                            path="/assets/moon.svg"
+                            alt="night"
+                        />
+                    </div>
+                    <Footer/>
                 </div>
             </div>
         </CSSTransition>

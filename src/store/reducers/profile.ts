@@ -1,8 +1,4 @@
-import {
-    ProfileAction,
-    ProfileActionType,
-    ProfileState,
-} from './../../types/profile';
+import { ProfileAction, ProfileActionType, ProfileState, } from './../../types/profile';
 
 const initialState: ProfileState = {
     openProfileMenu: false,
