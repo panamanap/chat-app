@@ -16,3 +16,8 @@
 .customButton:hover {
     background-color: #eeecec;
 }
+
+.customButton:active {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}

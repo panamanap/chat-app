@@ -1,15 +1,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
-import { Login } from '../Login';
+import { useTypedSelector } from '../hooks/useTypedSelector';
+import { Login } from '../components/Login';
 import { Home } from '../pages/Home';
+import { selectId } from '../store/selectors/login';
+import { USER_DATA } from '../utils/constants';
 import { privateRoutes, publicRoutes } from './routes';
 
 export const AppRouter = () => {
-    const user = false;
+    const id = useTypedSelector(selectId)
 
     return (
         <>
-            {user ? (
+            {localStorage.getItem(USER_DATA)? (
                 <Routes>
                     {publicRoutes.map(({ path, component }) => (
                         <Route key={path} path={path} element={component} />

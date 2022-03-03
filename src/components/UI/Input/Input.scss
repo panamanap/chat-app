@@ -3,6 +3,7 @@
 .text {
     padding: 10px 15px;
     border: none;
+    outline: none;
     background-color: $elements-background-color;
     border-radius: 5px;
     width: 100%;
@@ -11,7 +12,7 @@
 }
 
 .text:focus {
-    border: none;
+    border: 1px solid transparent;
     outline: 2px solid #4aade6;
     background-color: #fff;
 }

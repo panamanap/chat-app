@@ -27,21 +27,3 @@
         }
     }
 }
-
-.transitionProfile-enter {
-    opacity: 0;
-} 
-
-.transitionProfile-enter-active {
-    opacity: 1;
-    transition: opacity 300ms;
-}
-
-.transitionProfile-exit {
-    opacity: 1;
-}
-
-.transitionProfile-exit-active {
-    opacity: 0;
-    transition: opacity 300ms;
-}
