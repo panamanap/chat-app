@@ -1,0 +1,17 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+
+    h1 {
+        color: #333;
+        font-weight: 100;
+        margin-top: 10px;
+    }
+
+    img {
+        width: 150px;
+        opacity: 0.6;
+    }   
+}
