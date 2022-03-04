@@ -4,7 +4,6 @@ import { Input } from '../UI/Input/Input';
 import { Logo } from '../Logo';
 import { auth } from '../../utils/firebase-config';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
@@ -28,8 +27,13 @@ export const Login = () => {
     const login = ({ email, password }: UserData) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                dispatch(createUser({ id: user.uid, email: user.email }));
-                window.location.reload();
+                dispatch(
+                    createUser({
+                        id: user.uid,
+                        email: user.email,
+                        isAuth: true,
+                    })
+                );
             })
             .catch((error) => console.log(error));
     };
@@ -45,11 +49,17 @@ export const Login = () => {
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                dispatch(createUser({ id: user.uid, email: user.email }));
-                window.location.reload();
+                dispatch(
+                    createUser({
+                        id: user.uid,
+                        email: user.email,
+                        isAuth: true,
+                        isNewAccount: true,
+                    })
+                );
             })
             .catch((error) => {
-                dispatch(openRegistration(true))
+                dispatch(openRegistration(true));
                 alert('This account exists!');
             });
     };

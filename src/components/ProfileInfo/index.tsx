@@ -1,5 +1,6 @@
 import React from 'react';
 import { IProfileInfo } from '../../types/profile';
+import { SIDEBAR_SIZE, USER_DATA } from '../../utils/constants';
 import './ProfileInfo.scss';
 
 interface ProfileInfoProps extends Omit<IProfileInfo, 'id'> {
@@ -21,10 +22,9 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
             ) : (
                 <img src="/assets/user.svg" className='img' alt='user'/>
             )}
-
             <div className="description">
                 <h3>{name}</h3>
-                <p>{title}</p>
+               <p className='titleText'>{title}</p>
             </div>
         </div>
     );

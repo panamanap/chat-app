@@ -3,6 +3,7 @@ import { drawer } from './drawer';
 import { profile } from './profile';
 import { dialog } from './dialog';
 import { sidebar } from './sidebar';
+import { settings } from './settings';
 import { combineReducers } from "redux";
 
 export const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ export const rootReducer = combineReducers({
     dialog,
     profile,
     drawer,
-    login
+    login,
+    settings
 })
 
 export type RootState = ReturnType<typeof rootReducer>;

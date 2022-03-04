@@ -10,7 +10,6 @@ import { Header } from '../Header';
 import { ModalWindow } from '../ModalWindow';
 import { ProfileInfo } from '../ProfileInfo';
 import { MenuItem } from '../UI/MenuItem';
-import './ProfileModal.scss';
 
 export const ProfileModal = () => {
     const dispatch = useDispatch();
@@ -18,10 +17,14 @@ export const ProfileModal = () => {
     const showProfile = useTypedSelector(selectOpenProfileModal);
     const showMenu = useTypedSelector(selectOpenProfileMenu);
 
-    const onClick = () => {};
+    const onStartCall = () => {};
 
     const onCloseProfile = () => {
         dispatch(openProfileModal(false));
+    };
+
+    const onCloseMenu = () => {
+        dispatch(openProfileMenu(false));
     };
 
     const onOpenMenu = () => {
@@ -33,67 +36,62 @@ export const ProfileModal = () => {
     };
 
     return (
-        <ModalWindow condition={showProfile}>
-            <div className="profileWrapper" onClick={onCloseProfile}>
-                <div
-                    className="profile"
-                    onClick={(event) => event.stopPropagation()}
+        <ModalWindow
+            condition={showProfile}
+            onCloseModal={onCloseProfile}
+            onCloseMenu={onCloseMenu}
+        >
+           <div>
+                <Header
+                    title="User Info"
+                    buttons={[
+                        {
+                            path: '/assets/call.svg',
+                            alt: 'call',
+                            onClick: onStartCall,
+                            size: 20,
+                        },
+                        {
+                            path: 'assets/more.svg',
+                            alt: 'more',
+                            onClick: onOpenMenu,
+                            size: 17,
+                        },
+                        {
+                            path: '/assets/cross.svg',
+                            alt: 'cross',
+                            onClick: onCloseProfile,
+                            size: 20,
+                        },
+                    ]}
+                    type="modal"
                 >
-                    <Header
-                        title="User Info"
-                        buttons={[
-                            {
-                                path: '/assets/call.svg',
-                                alt: 'call',
-                                onClick: onClick,
-                                size: 20,
-                            },
-                            {
-                                path: 'assets/more.svg',
-                                alt: 'more',
-                                onClick: onOpenMenu,
-                                size: 17,
-                            },
-                            {
-                                path: '/assets/cross.svg',
-                                alt: 'cross',
-                                onClick: onCloseProfile,
-                                size: 20,
-                            },
-                        ]}
-                        type="modal"
-                    >
-                        <AdditionalMenu
-                            top={30}
-                            right={45}
-                            condition={showMenu}
-                        >
-                            <MenuItem
-                                path="/assets/edit.svg"
-                                alt="edit"
-                                title="Edit contact"
-                            />
-                            <MenuItem
-                                path="/assets/block.svg"
-                                alt="block"
-                                title="Block user"
-                            />
-                            <MenuItem
-                                path="/assets/trash.svg"
-                                alt="trash"
-                                title="Delete chat"
-                            />
-                        </AdditionalMenu>
-                    </Header>
-                    <ProfileInfo
-                        name="Иванов Иван"
-                        title="last seen recently"
-                        avatar=""
-                        type="modal"
-                    />
-                    <div className="additionalInfo">
-                        <p>UserName</p>
-                    </div>
+                    <AdditionalMenu type="modal" condition={showMenu}>
+                        <MenuItem
+                            path="/assets/edit.svg"
+                            alt="edit"
+                            title="Edit contact"
+                        />
+                        <MenuItem
+                            path="/assets/block.svg"
+                            alt="block"
+                            title="Block user"
+                        />
+                        <MenuItem
+                            path="/assets/trash.svg"
+                            alt="trash"
+                            title="Delete chat"
+                        />
+                    </AdditionalMenu>
+                </Header>
+                <ProfileInfo
+                    name="Иванов Иван"
+                    title="last seen recently"
+                    avatar=""
+                    type="modal"
+                />
+                <div className="additionalInfo">
+                    <p>UserName</p>
                 </div>
             </div>
         </ModalWindow>

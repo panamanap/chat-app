@@ -4,21 +4,42 @@ import './ModalWindow.scss';
 
 interface ModalWindowProps {
     condition: boolean;
-    children: React.ReactChild;
+    onCloseModal: () => void;
+    onCloseMenu: () => void;
+    children: React.ReactNode;
 }
 
 export const ModalWindow: React.FC<ModalWindowProps> = ({
     condition,
+    onCloseModal,
+    onCloseMenu,
     children,
 }) => {
+    const closeMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+        if ((event.target as HTMLImageElement).className === 'image more') {
+            return;
+        }
+        onCloseMenu()
+    } 
+    
     return (
         <CSSTransition
             in={condition}
-            timeout={500}
+            timeout={1000}
             unmountOnExit
             classNames="transition"
         >
-            {children}
+            <div className="backgroundWrapper" onClick={onCloseModal}>
+                <div
+                    className="wrapper"
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        closeMenu(event);
+                    }}
+                >
+                    {children}
+                </div>
+            </div>
         </CSSTransition>
     );
 };

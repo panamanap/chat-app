@@ -2,20 +2,23 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { openDrawer } from '../../store/actions/drawer';
+import {
+    openCalls,
+    openContacts,
+    openDrawer,
+    openSettings,
+} from '../../store/actions/drawer';
 import { selectGetColor } from '../../store/selectors/dialogs';
 import { BACKGROUND_COLOR } from '../../utils/constants';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
+import { MenuList } from '../MenuList';
 import { ProfileInfo } from '../ProfileInfo';
-import { MenuItem } from '../UI/MenuItem';
 import './Drawer.scss';
 
 interface DrawerProps {
     condition: boolean;
 }
-
-const imageSize = 35;
 
 export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
     const dispatch = useDispatch();
@@ -24,6 +27,21 @@ export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
 
     const onCloseDrawer = () => {
         dispatch(openDrawer(false));
+    };
+
+    const onOpenSettings = () => {
+        dispatch(openDrawer(false));
+        dispatch(openSettings(true));
+    };
+
+    const onOpenContacts = () => {
+        dispatch(openDrawer(false));
+        dispatch(openContacts(true));
+    };
+
+    const onOpenCalls = () => {
+        dispatch(openDrawer(false));
+        dispatch(openCalls(true));
     };
 
     return (
@@ -55,35 +73,44 @@ export const Drawer: React.FC<DrawerProps> = ({ condition }) => {
                             }`,
                         }}
                     />
-                    <div className="navMenu">
-                        <MenuItem title="Contacts" path="/assets/contact.svg" alt="contacts" />
-                        <MenuItem
-                            title="Calls"
-                            path="/assets/call.svg"
-                            alt="call"
-                        />
-                        <MenuItem
-                            title="Games"
-                            path="/assets/games.svg"
-                            alt="contacts"
-                        />
-                        <MenuItem
-                            title="Music"
-                            path="/assets/music.svg"
-                            alt="music"
-                        />
-                        <MenuItem
-                            title="Settings"
-                            path="/assets/settings.svg"
-                            alt="settings"
-                        />
-                        <MenuItem
-                            title="Night mode"
-                            path="/assets/moon.svg"
-                            alt="night"
-                        />
-                    </div>
-                    <Footer/>
+                    <MenuList
+                        menu={[
+                            {
+                                title: 'Contacts',
+                                path: '/assets/contact.svg',
+                                alt: 'contacts',
+                                onClick: onOpenContacts,
+                            },
+                            {
+                                title: 'Calls',
+                                path: '/assets/call.svg',
+                                alt: 'call',
+                                onClick: onOpenCalls,
+                            },
+                            {
+                                title: 'Games',
+                                path: '/assets/games.svg',
+                                alt: 'contacts',
+                            },
+                            {
+                                title: 'Music',
+                                path: '/assets/music.svg',
+                                alt: 'music',
+                            },
+                            {
+                                title: 'Settings',
+                                path: '/assets/settings.svg',
+                                alt: 'settings',
+                                onClick: onOpenSettings,
+                            },
+                            {
+                                title: 'Night mode',
+                                path: '/assets/moon.svg',
+                                alt: 'night',
+                            },
+                        ]}
+                    />
+                    <Footer />
                 </div>
             </div>
         </CSSTransition>

@@ -6,7 +6,9 @@ export interface UserData {
 export interface UserState {
     id: string;
     email: string | null;
-    openRegistration?: boolean
+    openRegistration?: boolean;
+    isAuth: boolean;
+    isNewAccount?: boolean;
 }
 
 export enum LoginActionType {
@@ -21,8 +23,8 @@ export interface CreateUser {
 }
 
 export interface OpenRegistration {
-    type: LoginActionType.OPEN_REGISTRATION,
-    payload: boolean
+    type: LoginActionType.OPEN_REGISTRATION;
+    payload: boolean;
 }
 
 export interface RemoveUser {

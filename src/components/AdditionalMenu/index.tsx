@@ -3,16 +3,14 @@ import { CSSTransition } from 'react-transition-group';
 import './AdditionMenu.scss';
 
 interface AdditionalMenuProps {
-    top: number;
-    right: number;
     condition: boolean;
+    type?: string
     children: React.ReactNode;
 }
 
 export const AdditionalMenu: React.FC<AdditionalMenuProps> = ({
-    top,
-    right,
     condition,
+    type,
     children,
 }) => {
     return (
@@ -22,11 +20,7 @@ export const AdditionalMenu: React.FC<AdditionalMenuProps> = ({
             unmountOnExit
             classNames="transitionMenu"
         >
-            <div
-                className="menu"
-                onClick={(event) => event.stopPropagation()}
-                style={{ top: `${top}px`, right: `${right}px` }}
-            >
+            <div className={`menu menu-${type}`} onClick={(event) => event.stopPropagation()}>
                 {children}
             </div>
         </CSSTransition>

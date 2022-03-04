@@ -8,16 +8,24 @@
     border-right: 1px solid #ddd;
     height: 100%;
 
-    
-
     .dialogsList {
         flex-grow: 1;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: 1px;
+            border-radius: 5px;
+            background-color: #bbb;
+        }
     }
 
     .navbar{
         padding: 10px 25px;
         box-shadow: 0 -1px 3px #ddd;
-        
         display: flex;
         justify-content: space-between;
     }

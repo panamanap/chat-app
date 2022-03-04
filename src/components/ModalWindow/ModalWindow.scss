@@ -1,3 +1,32 @@
+@import '../../sass/constants';
+
+.backgroundWrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        background-color: $basis-background-color;
+        width: 400px;
+        height: 90%;
+        border-radius: 10px;
+
+        .additionalInfo {
+            margin-top: 40px;
+        }
+
+        .headerProfile {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+    }
+}
+
 .transition-enter {
     opacity: 0;
 } 

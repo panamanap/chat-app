@@ -1,5 +1,5 @@
 import { Login } from '../components/Login/index';
-import { Home } from './../pages/Home';
+import { Home } from '../pages/Home';
 import { LOGIN_ROUTE, CHAT_ROUTE } from '../utils/constants';
 
 export const publicRoutes = [
