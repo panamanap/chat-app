@@ -119,7 +119,7 @@ export const DialogContent = () => {
                 ]}
                 type="dialog"
             >
-                <AdditionalMenu top={60} right={40} condition={showDialogMenu}>
+                <AdditionalMenu type='dialogContent' condition={showDialogMenu}>
                     {showColorMenu ? (
                         <ColorMenu
                             onGetColor={onGetColor}

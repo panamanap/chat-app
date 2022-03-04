@@ -7,6 +7,17 @@
     padding: 5px 0; 
     display: flex;
     flex-direction: column;   
+    z-index: 1;
+
+    &-dialogContent {
+        top: 60px;
+        right: 50px;
+    }
+
+    &-modal {
+        top: 60px;
+        right: 75px;
+    }
 }
 
 
@@ -30,5 +41,3 @@
     transform: scale(0.9);
     transition: opacity 300ms, transform 300ms;
 }
-
-
